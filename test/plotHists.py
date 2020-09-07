@@ -125,13 +125,15 @@ def plot_with_ratio(numer,numer_label,denom,denom_label,div_opt="",labels_text=[
 if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(description='prints E/gamma pat::Electrons/Photons')
-    parser.add_argument('--data','-d',type=str,help='data filename')
-    parser.add_argument('--mc','-p',type=str,help='mc filename')
+    parser.add_argument('--tar','-t',type=str,required=True,help='target filename')
+    parser.add_argument('--tar_name',type=str,default="target",help='target leg entry')
+    parser.add_argument('--ref','-r',type=str,required=True,help='ref filename')
+    parser.add_argument('--ref_name',type=str,default="reference",help='reference leg entry')
     args = parser.parse_args()
 
-    if hasattr(args,"data"):
-        data = ROOT.TFile(args.data,"READ")
+    if hasattr(args,"tar"):
+        tar = ROOT.TFile(args.tar,"READ")
 
-    if hasattr(args,"mc"):
-        mc = ROOT.TFile(args.mc,"READ")
+    if hasattr(args,"ref"):
+        ref = ROOT.TFile(args.ref,"READ")
     
