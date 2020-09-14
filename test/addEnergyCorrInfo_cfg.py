@@ -53,7 +53,7 @@ process.output = cms.OutputModule("PoolOutputModule",
                                       "keep *_slimmedPhotons_*_*"
                                   )
                                   fileName = cms.untracked.string(options.outputFile),
-                                  SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('skimPath')),                                     
+                                  SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('path')),                                     
 )
 
 process.outPath = cms.EndPath(process.output)
