@@ -51,7 +51,7 @@ process.output = cms.OutputModule("PoolOutputModule",
                                       "drop *_*_*_EGUSER",
                                       "keep *_slimmedElectrons_*_*",
                                       "keep *_slimmedPhotons_*_*"
-                                  )
+                                  ),
                                   fileName = cms.untracked.string(options.outputFile),
                                   SelectEvents = cms.untracked.PSet(SelectEvents = cms.vstring('path')),                                     
 )
